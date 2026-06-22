@@ -122,13 +122,11 @@ h1, h2, h3, h4 {
    ============================================ */
 .hero-wrapper {
   position: relative;
-  height: 200vh;
 }
 
 .hero {
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -162,19 +160,7 @@ h1, h2, h3, h4 {
   50% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
 }
 
-/* Scroll-driven hero fade */
-@supports (animation-timeline: scroll()) {
-  .hero-content {
-    animation: heroFade linear both;
-    animation-timeline: scroll();
-    animation-range: 0vh 50vh;
-  }
-
-  @keyframes heroFade {
-    from { opacity: 1; transform: translateY(0); filter: blur(0); }
-    to { opacity: 0; transform: translateY(-60px); filter: blur(6px); }
-  }
-}
+/* Hero content (no scroll-driven animation) */
 
 .hero-content {
   position: relative;
